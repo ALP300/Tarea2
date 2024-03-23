@@ -1,0 +1,49 @@
+@model List<Ejercicio1.Models.Cliente>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Clientes</title>
+    <style>
+        .cliente-container {
+            margin-bottom: 20px;
+        }
+
+        .cliente-container label {
+            font-weight: bold;
+        }
+
+        .cliente-container input {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lista de Clientes</h2>
+
+    @foreach (var cliente in Model)
+{
+    <div class="cliente-container">
+        <label>ID:</label>
+        <input type="text" value="@cliente.Id" readonly />
+
+        <label>Nombre:</label>
+        <input type="text" value="@cliente.Nombre" readonly />
+
+        <label>Apellido:</label>
+        <input type="text" value="@cliente.Apellido" readonly />
+
+        <label>Dirección:</label>
+        <input type="text" value="@cliente.Direccion" readonly />
+
+        <label>Teléfono:</label>
+        <input type="text" value="@cliente.Telefono" readonly />
+
+        <label>Fecha de Nacimiento:</label>
+        <input type="text" value="@cliente.FechaNacimiento.ToShortDateString()" readonly />
+    </div>
+}
+
+</body>
+</html>
